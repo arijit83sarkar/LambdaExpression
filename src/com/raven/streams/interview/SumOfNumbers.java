@@ -12,15 +12,21 @@ public class SumOfNumbers {
         List<Integer> integerList = Arrays.asList(2, 4, 1, 5, 6);
 
         // #1
-        Integer sum = integerList.stream().reduce((a, b) -> (a + b)).get();
+        Integer sum = integerList.stream()
+                .reduce((a, b) -> (a + b))
+                .get();
         System.out.println(sum);
 
         // #2
-        sum = integerList.stream().reduce(Integer::sum).get();
+        sum = integerList.stream()
+                .reduce(Integer::sum)
+                .get();
         System.out.println(sum);
 
         // #3
-        Integer sum1 = integerList.stream().mapToInt(Integer::intValue).sum();
+        Integer sum1 = integerList.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
         System.out.println(sum1);
 
         Integer _max = integerList.stream().reduce((num1, num2) -> num1 > num2 ? num1 : num2).get();
