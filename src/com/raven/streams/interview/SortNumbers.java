@@ -3,7 +3,6 @@ package com.raven.streams.interview;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class SortNumbers {
     public static void main(String[] args) {
@@ -11,12 +10,26 @@ public class SortNumbers {
 
         List<Integer> sortedAscending = integerList.stream()
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
         System.out.println(sortedAscending);
 
         List<Integer> sortedDescending = integerList.stream()
                 .sorted(Collections.reverseOrder())
-                .collect(Collectors.toList());
+                .toList();
         System.out.println(sortedDescending);
+
+        //
+
+        List<String> stringList = List.of("Map", "Java", "Strem", "GroupBy", "Sort");
+
+        List<String> sortAsc = stringList.stream()
+                .sorted()
+                .toList();
+        System.out.println(sortAsc);
+
+        List<String> sortDsc = stringList.stream()
+                .sorted(Collections.reverseOrder())
+                .toList();
+        System.out.println(sortDsc);
     }
 }

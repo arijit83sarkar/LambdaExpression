@@ -26,7 +26,7 @@ public class LimitNumbers {
         // SKIP
         List<Integer> skipList = integerList.stream()
                 .skip(5)
-                .collect(Collectors.toList());
+                .toList();
         System.out.println(skipList);
 
         // Create a Stream pipeline to sum all elements after the nth element from a list of elements.

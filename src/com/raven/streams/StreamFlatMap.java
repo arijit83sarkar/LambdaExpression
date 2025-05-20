@@ -44,7 +44,7 @@ public class StreamFlatMap {
         // System.out.println(strings);
         System.out.println("------------------------------");
 
-        stringList.stream().map(arg0 -> arg0).forEach(System.out::println);
+        stringList.forEach(System.out::println);
 
         System.out.println("------------------------------");
         Function<String, String> uppercaseFunction = String::toUpperCase;

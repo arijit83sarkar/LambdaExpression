@@ -21,10 +21,15 @@ public class DuplicateNumbers {
         // that includes duplicates.
         Set<Integer> distinctList = integerList.stream()
                 .collect(Collectors.toSet());
-        System.out.println(distinctList);
+        System.out.println("#1 -> " + distinctList);
 
         distinctList = new HashSet<>(integerList);
-        System.out.println(distinctList);
+        System.out.println("#2 -> " + distinctList);
+
+        distinctList = integerList.stream()
+                .distinct()
+                .collect(Collectors.toSet());
+        System.out.println("#3 -> " + distinctList);
 
         List<Integer> nonDuplicate = integerList.stream()
                 .filter(e -> Collections.frequency(integerList, e) == 1)
